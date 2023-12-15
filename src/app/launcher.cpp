@@ -2,6 +2,19 @@
 
 #include "../interface/interface.hpp"
 
+#include "CAppManager.hpp"
+#include "test_app/CTestApp.hpp"
+
+#define ARCHITECTURE_TRANSITOIRE
+
+#ifdef ARCHITECTURE_TRANSITOIRE
+void launcher()
+{
+    paxos::CAppManager::registerApp<paxos::CTestApp>();
+
+    paxos::CAppManager::launchAppByType<paxos::CTestApp>();
+}
+#else
 void launcher()
 {
     initializeApplications();
@@ -104,3 +117,4 @@ void launcher()
         #endif
     }
 }
+#endif

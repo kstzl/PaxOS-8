@@ -19,6 +19,7 @@ std::vector<App*> App::appList;
 
 void initializeApplications()
 {
+
     // cpp
     App::appList.push_back(new CppApp<Phone>("phone"));
     App::appList.push_back(new CppApp<Message>("message"));
