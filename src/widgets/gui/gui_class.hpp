@@ -24,6 +24,8 @@
 
 #include "../../app/CApp.hpp"
 
+#include "label.hpp"
+
 typedef uint8_t Alignment;
 typedef void event;
 
@@ -104,6 +106,7 @@ class Gui // widget system
     virtual int16_t getRelativeFixY();
 
 
+    void addLabel(Label* pLabel);
     void addChild(Gui *child);    // add child
     void removechildren();        // remove all children
     void setParent(Gui *parent);  // set parent

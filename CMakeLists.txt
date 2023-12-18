@@ -100,3 +100,6 @@ if (WIN32)
     message(">> Copying DLLs: ${WIN_DLLS}")
     file(COPY ${WIN_DLLS} DESTINATION /)
 endif()
+
+include_directories(${CMAKE_SOURCE_DIR}/src/lua/)
+include_directories(${CMAKE_SOURCE_DIR}/src/lib/)

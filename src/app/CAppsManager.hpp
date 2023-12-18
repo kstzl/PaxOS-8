@@ -7,8 +7,10 @@
 
 #include "CApp.hpp"
 #include "CLuaApp.hpp"
+#include "CSolLuaApp.hpp"
 
 using LuaAppUniquePtr = std::unique_ptr<CLuaApp>;
+using SolLuaAppUniquePtr = std::unique_ptr<CSolLuaApp>;
 using AppUniquePtr = std::unique_ptr<CApp>;
 using AppVector = std::vector<AppUniquePtr>;
 
@@ -37,7 +39,7 @@ class CAppsManager
 
         static void registerLuaApplication(const std::string& luaAppName)
         {
-            LuaAppUniquePtr pNewRegisteredLuaApp = std::make_unique<CLuaApp>();
+            SolLuaAppUniquePtr pNewRegisteredLuaApp = std::make_unique<CSolLuaApp>();
             pNewRegisteredLuaApp->initializeLuaApp(luaAppName);
             getInstance().m_apps.push_back(std::move(pNewRegisteredLuaApp));
         }

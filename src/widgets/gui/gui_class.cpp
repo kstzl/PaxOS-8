@@ -618,6 +618,13 @@ void Gui::setHeight(int16_t height)
     reloadParent();
 }
 
+void Gui::addLabel(Label* pLabel)
+{
+    Gui* guiChild = dynamic_cast<Gui*>(pLabel);
+
+
+}
+
 void Gui::addChild(Gui *child)
 {
     if(child == nullptr)
